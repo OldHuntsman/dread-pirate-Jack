@@ -1,35 +1,47 @@
 # The script of the game goes in this file.
 
+init -10 python:
+    from dpj_script import *
+    import collections
+    
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define player = Character("Джек", color="#000000")
+define p = Character("Пиратка")
 
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    python:
+        player_ship = Ship('Стриж')
+        
+    call fight
 
-    scene bg room
+    scene bg promenade
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    player "Старпом, ко мне. "
 
-    show eileen happy
+    show girl with moveinright
+    
+    p "Ахой!"
+    p "Корабль готов к отплытию, капитан."
+    
+    hide girl with dissolve
+    
+    return
 
-    # These display lines of dialogue.
-
-    "Hello, world."
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
-
+label fight:
+        
+    python:
+        pass
+    
+    show bg sail with dissolve
+    
+    "Мы вышли на охоту."
+        
+    'Состояние "Стрижа" [player_ship.condition], скорость [] узлов, сила залпа [], абордажная сила [].'
+    
     return

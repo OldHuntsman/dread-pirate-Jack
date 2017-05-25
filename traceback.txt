@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 4, in <module>
+    from dpj_script import *
+SyntaxError: invalid syntax (dpj_script.py, line 21)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "/home/master/Documents/renpy-6.99.11-sdk/renpy/bootstrap.py", line 295, in bootstrap
+    renpy.main.main()
+  File "/home/master/Documents/renpy-6.99.11-sdk/renpy/main.py", line 419, in main
+    game.context().run(node)
+  File "/home/master/Desktop/script.rpyc", line 3, in script
+  File "/home/master/Documents/renpy-6.99.11-sdk/renpy/ast.py", line 814, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/home/master/Documents/renpy-6.99.11-sdk/renpy/python.py", line 1719, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 4, in <module>
+    from dpj_script import *
+  File "/home/master/Documents/renpy-6.99.11-sdk/renpy/loader.py", line 710, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: invalid syntax (dpj_script.py, line 21)
+
+Linux-4.4.0-53-generic-x86_64-with-debian-stretch-sid
+Ren'Py 6.99.12.4.2187
+ 
